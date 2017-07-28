@@ -21,7 +21,8 @@ $imageBottom = wp_get_attachment_image_src(get_post_thumbnail_id($parallaxBottom
     }
 </style>
 <div class="container-fluid parallax">
-    <div class="parallax-top text-center">
+    <div class="parallax-top text-center" data-type="background"  data-speed="10" class="pages parallax">
+        <article data-type="text" data-speed="5" class="parallax">UrbánMagdi.hu</article>
     </div>
 </div>
 
