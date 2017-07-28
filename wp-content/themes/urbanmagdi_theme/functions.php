@@ -99,3 +99,18 @@ function register_parallaxphotos() {
 
     register_post_type( 'parallaxphotos', $args );
 }
+
+/**
+ * Prevent delete the mian pictures
+ * @param  [type] $post_ID [description]
+ * @return [type]          [description]
+ */
+ function restrict_post_deletion($post_ID){
+      $restricted_ements = array(16,18);
+      if(in_array($post_ID, $restricted_ements)){
+          wp_redirect(admin_url('index.php'));
+          exit;
+      }
+ }
+ add_action('wp_trash_post', 'restrict_post_deletion', 1);
+ add_action('before_delete_post', 'restrict_post_deletion', 1);

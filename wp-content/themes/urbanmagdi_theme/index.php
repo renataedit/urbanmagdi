@@ -21,7 +21,7 @@ $imageBottom = wp_get_attachment_image_src(get_post_thumbnail_id($parallaxBottom
     }
 </style>
 <div class="container-fluid parallax">
-    <div class="parallax-top text-center" data-type="background"  data-speed="10" class="pages parallax">
+    <div class="parallax parallax-top text-center" data-type="background"  data-speed="10">
         <article data-type="text" data-speed="5" class="parallax">UrbánMagdi.hu</article>
     </div>
 </div>
@@ -38,16 +38,38 @@ $imageBottom = wp_get_attachment_image_src(get_post_thumbnail_id($parallaxBottom
                 <?php
                 $about = get_post(4);
                 ?>
-                <h3 class="post_title"><?php echo $about->post_title; ?></h3>
+                <h3 class="post_title"><?= $about->post_title; ?></h3>
                 <div>
-                    <?php echo b_excerpt($about->post_content, 600); ?>
+                    <?= b_excerpt($about->post_content, 600); ?>
                 </div>
                 <a class="readmore" href="/rolam">Tovább...</a>
             </div>
         </div>
     </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="cols">
 
+          <?php
+          global $post;
+          $args = array( 'posts_per_page' => 20, 'offset'=> 1, 'category' => 2 );
+
+          $myposts = get_posts( $args );
+          foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+          	<div class="box">
+          		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+              <div class="box-content">
+                <?= b_excerpt($post->post_content, 400); ?>
+              </div>
+            </div>
+          <?php endforeach;
+          wp_reset_postdata();
+
+          ?>
+    </div>
+  </div>
+</div>
 <div class="container-fluid gallery-home">
     <div class="row" style="margin-top: 10px;">
 
