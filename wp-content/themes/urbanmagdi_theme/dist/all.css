@@ -6781,6 +6781,9 @@ a {
 a:hover {
   text-decoration: none !important; }
 
+label {
+  font-weight: 400; }
+
 .nomargin {
   margin-left: 0px;
   margin-right: 0px; }
@@ -6793,8 +6796,16 @@ a, a:hover, a:focus, a:active, a.active {
   outline: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600; }
+  font-family: 'Sacramento', cursive; }
+
+h1 {
+  font-size: 50px; }
+
+h2 {
+  font-size: 44px; }
+
+h3 {
+  font-size: 34px; }
 
 .article img {
   max-width: 100%;
@@ -6867,8 +6878,8 @@ header #navbar-brand span {
   white-space: nowrap !important; }
 
 .content {
-  padding-top: 64px;
-  min-height: 1000px; }
+  padding-top: 72px;
+  min-height: 500px; }
 
 .parallax {
   padding: 0;
@@ -6922,23 +6933,31 @@ header #navbar-brand span {
 .contact-box input, .contact-box textarea {
   border: 0;
   border-bottom: 1px solid #DFDFDF;
-  padding: 4px 0; }
+  padding: 0; }
 
 /* Masonry layout */
-.cols {
-  -moz-column-count: 3;
-  -moz-column-gap: 3%;
-  -moz-column-width: 30%;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 3%;
-  -webkit-column-width: 30%;
-  column-count: 3;
-  column-gap: 3%;
-  column-width: 30%; }
-  .cols .box {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #DDD; }
+#blog {
+  margin: 20px auto; }
+  #blog .cols {
+    -moz-column-count: 3;
+    -moz-column-gap: 2%;
+    -moz-column-width: 30%;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 2%;
+    -webkit-column-width: 30%;
+    column-count: 3;
+    column-gap: 2%;
+    column-width: 30%; }
+    #blog .cols .box {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f9f9f9; }
+      #blog .cols .box .box-inner {
+        border: 1px solid #FFF;
+        padding: 15px; }
+        #blog .cols .box .box-inner h3 a {
+          font-size: 34px; }
 
 input:focus, textarea:focus, keygen:focus, select:focus {
   outline-offset: 0 !important;
@@ -6950,8 +6969,8 @@ span.wpcf7-not-valid-tip {
 .readmore, .contact-box .wpcf7-submit {
   display: block;
   float: left;
-  background-color: #009d97;
-  border: 2px solid #009d97;
+  background-color: #c2a13f;
+  border: 2px solid #c2a13f;
   color: #FFF;
   padding: 5px 10px;
   transition-duration: 0.3s;
@@ -6965,7 +6984,7 @@ span.wpcf7-not-valid-tip {
 
 .readmore:hover, .contact-box .wpcf7-submit:hover {
   background-color: #FFF;
-  color: #009d97; }
+  color: #c2a13f; }
 
 footer {
   background-color: #2F2E2E;
@@ -7032,12 +7051,12 @@ form .btn {
 
 .inner_title {
   padding-bottom: 20px;
-  padding-left: 15px;
   text-align: left; }
 
 .post_title {
   font-weight: 400;
-  text-transform: none; }
+  text-transform: none;
+  margin-top: 1em; }
 
 .post_title:after, .inner_title:after {
   display: block;
@@ -7173,7 +7192,7 @@ aside {
 .widget-title {
   font-weight: 400;
   font-size: 22px;
-  color: #009d97;
+  color: #c2a13f;
   padding-top: 0; }
 
 .widget_recent_entries ul {

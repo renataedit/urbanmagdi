@@ -18,6 +18,7 @@
     <?php wp_head(); ?>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Sacramento&amp;subset=latin-ext" rel="stylesheet">
 
 </head>
 <body <?php body_class('index'); ?> id="page-top">

@@ -1,12 +1,10 @@
-<?php
-get_header();
+<?php get_header(); ?>
 
-if (have_posts()) {
-    the_post();
-    setup_postdata($post);
+<div class="article container">
+	<?php while ( have_posts() ) : the_post(); ?>
 
-} else { ?>
-    <p>Sorry, no posts matched your criteria.</p>
-<?php }
-
-get_footer();
+		<h2 class="inner_title"><?php the_title(); ?></h2>
+		<?php the_content(); ?>
+	<?php endwhile; // end of the loop. ?>
+</div>
+<?php get_footer(); ?>

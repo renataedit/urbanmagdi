@@ -47,20 +47,22 @@ $imageBottom = wp_get_attachment_image_src(get_post_thumbnail_id($parallaxBottom
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container" id="blog">
   <div class="row">
     <div class="cols">
 
           <?php
           global $post;
-          $args = array( 'posts_per_page' => 20, 'offset'=> 1, 'category' => 2 );
+          $args = array( 'posts_per_page' => 20, 'category' => 2 );
 
           $myposts = get_posts( $args );
           foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
           	<div class="box">
-          		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-              <div class="box-content">
-                <?= b_excerpt($post->post_content, 400); ?>
+              <div class="box-inner">
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <div class="box-content">
+                  <?= b_excerpt($post->post_content, 400); ?>
+                </div>
               </div>
             </div>
           <?php endforeach;
@@ -70,12 +72,6 @@ $imageBottom = wp_get_attachment_image_src(get_post_thumbnail_id($parallaxBottom
     </div>
   </div>
 </div>
-<div class="container-fluid gallery-home">
-    <div class="row" style="margin-top: 10px;">
-
-    </div>
-</div>
-
 <div class="container-fluid parallax">
     <div class="parallax-bottom text-center">
     </div>
@@ -90,7 +86,7 @@ $imageBottom = wp_get_attachment_image_src(get_post_thumbnail_id($parallaxBottom
             </div>
         </div>
         <?php
-        $contactImgPost = get_post(120);
+        $contactImgPost = get_post(37);
         $image = wp_get_attachment_image_src(get_post_thumbnail_id($contactImgPost->ID), 'single-post-thumbnail');
         ?>
         <div class="col-md-6 nopadding contact-image" style="background-image: url(<?php echo $image[0]; ?>);">
