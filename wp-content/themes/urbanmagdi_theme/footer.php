@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                Email: <a href="mailto:magdi.urban@gmail.com">magdi.urban@gmail.com</a><br />
+                Email: <a href="mailto:info@urbanmagdi.hu">info@urbanmagdi.hu</a><br />
                 Tel: <br />
                 © 2017 by Urbán Magdolna - urbanmagdi.hu
             </div>
