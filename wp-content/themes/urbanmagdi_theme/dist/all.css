@@ -6899,13 +6899,16 @@ header #navbar-brand span {
     height: 400px;
     position: absolute;
     text-align: center;
-    top: 300px;
+    top: 200px;
     width: 100%;
-    font-size: 40px;
     color: #FFF;
     text-shadow: 0 0 3px #000;
     font-weight: 400;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.4); }
+    .parallax-top article h3, .parallax-bottom article h3 {
+      font-family: 'Open Sans', sans-serif;
+      font-style: italic;
+      font-size: 32px; }
 
 .parallax-bottom {
   -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
@@ -6936,9 +6939,9 @@ header #navbar-brand span {
   padding: 0; }
 
 /* Masonry layout */
-#blog {
+#blog, .archive_posts {
   margin: 20px auto; }
-  #blog .cols {
+  #blog .cols, .archive_posts .cols {
     -moz-column-count: 3;
     -moz-column-gap: 2%;
     -moz-column-width: 30%;
@@ -6948,15 +6951,15 @@ header #navbar-brand span {
     column-count: 3;
     column-gap: 2%;
     column-width: 30%; }
-    #blog .cols .box {
+    #blog .cols .box, .archive_posts .cols .box {
       display: inline-block;
       margin-bottom: 20px;
       padding: 15px;
-      background-color: #f9f9f9; }
-      #blog .cols .box .box-inner {
+      background-color: #ededed; }
+      #blog .cols .box .box-inner, .archive_posts .cols .box .box-inner {
         border: 1px solid #FFF;
         padding: 15px; }
-        #blog .cols .box .box-inner h3 a {
+        #blog .cols .box .box-inner h3 a, .archive_posts .cols .box .box-inner h3 a {
           font-size: 34px; }
 
 input:focus, textarea:focus, keygen:focus, select:focus {
@@ -7070,55 +7073,8 @@ form .btn {
   width: 900px;
   height: auto; }
 
-figure.effect-winston a {
-  color: #FFF !important;
-  font-size: 100% !important;
-  margin: 0 !important; }
-
-.published-date, .createdby {
-  font-style: italic;
-  margin-bottom: 5px; }
-
-/* SINGLE */
-.my-box {
-  height: 320px;
-  position: relative;
-  overflow: hidden; }
-
-/* Hover effect on featured image */
-.my-box:hover .bg {
-  -webkit-transition-duration: 1s;
-  /* Safari */
-  transition-duration: 1s;
-  transform: scale(1.1); }
-
-.my-box .bg {
-  position: absolute;
-  height: 100%;
-  width: 100%; }
-
-.my-box img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
-
-.my-box h1 {
-  position: absolute;
-  z-index: 2;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  padding: 15px;
-  margin: 0;
-  word-spacing: -0.15em;
-  font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.62); }
-
-.my-box .inner_title:after {
-  content: '';
-  display: none; }
+.post_thumbnail {
+  margin-bottom: 30px; }
 
 /* ---------------------------------------------------------- Archive pages */
 .archive_post {

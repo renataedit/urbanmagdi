@@ -1,24 +1,27 @@
 <?php get_header(); ?>
-
-    <h2><?php echo single_cat_title("", false); ?></h2>
-    <?php if (have_posts()) :?>
-        <?php while (have_posts()) : the_post();
-            setup_postdata($post);
-            ?>
-            <div class="archive_post">
-                <?php
-                if(has_post_thumbnail( $post->ID )){
-                    echo get_the_post_thumbnail( $post->ID, 'thumbnail' );
-                } else { ?>
-                    <img class="attachment-thumbnail" src="<?php bloginfo('template_url') ?>/images/no-image.jpg" />
-                <?php }	?>
-                <h3 class="archive_title inner_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <div class="archive_content"><?php echo my_ultimate_excerpt(35,$post); ?></div>
-                <a href="<?php the_permalink(); ?>" class="readmore"><?php echo __( 'Read more','corozon' ); ?></a>
+<div class="article container">
+    <h2 class="inner_title"><?php echo single_cat_title("", false); ?></h2>
+    <div class="archive_posts">
+        <div class="row">
+            <div class="cols">
+                <?php if (have_posts()) :?>
+                    <?php while (have_posts()) : the_post();
+                        setup_postdata($post);
+                        ?>
+                        <div class="box">
+                            <div class="box-inner">
+                                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                <div class="box-content">
+                                    <?= b_excerpt($post->post_content, 400); ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; else: ?>
+                    <p>Sorry, no posts matched your criteria.</p>
+                <?php endif; ?>
             </div>
-        <?php endwhile; else: ?>
-        <p>Sorry, no posts matched your criteria.</p>
-    <?php endif; ?>
+        </div>
+    </div>
     <!-- Pagination -->
     <div class="pagination">
         <?php
@@ -46,5 +49,5 @@
             <?php echo paginate_links( $args ); ?>
         </div>
     </div>
-
+</div>
 <?php get_footer(); ?>
